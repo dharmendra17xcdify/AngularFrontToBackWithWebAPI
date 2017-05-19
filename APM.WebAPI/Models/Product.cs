@@ -8,15 +8,24 @@ namespace APM.WebAPI.Models
 {
     public class Product
     {
+        [Required]
+        [MinLength(5), MaxLength(50)]
         public string Description { get; set; }
+
+        [Required]
         public decimal Price { get; set; }
+
+        [Required]
         public string ProductCode { get; set; }
+
+        [Required]
         public int ProductId { get; set; }
 
         [Required( ErrorMessage = "Product code is required", AllowEmptyStrings = false)]
-        [MinLength(5, ErrorMessage = "Product code min length is 5 characters")]
-        [MaxLength(11, ErrorMessage = "Product code max length is 11 characters")]
+        [MinLength(5, ErrorMessage = "Product Name min length is 5 characters")]
+        [MaxLength(11, ErrorMessage = "Product Name max length is 11 characters")]
         public string ProductName { get; set; }
+
         public DateTime ReleaseDate { get; set; }
     }
 }

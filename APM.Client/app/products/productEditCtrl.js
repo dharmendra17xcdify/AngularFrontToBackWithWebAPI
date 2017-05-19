@@ -11,7 +11,7 @@
         vm.product = {};
         vm.message = '';
 
-        productResource.get({ id: 5 },
+        productResource.get({ id: 2 },
             function (data) {
                 vm.product = data;
                 vm.originalProduct = angular.copy(data);
@@ -31,11 +31,11 @@
 
         vm.submit = function () {
             vm.message = '';
-            debugger;
+           
             if (vm.product.productId) {
                 vm.product.$update({ id: vm.product.productId },
                     function (data) {
-                        debugger
+                       
                         vm.message = "...Save Complete";
                     },
                     function (response) {
